@@ -1,14 +1,25 @@
-sumbol = set(input())
-alls = []
-dict_n = {}
-for x in range(int(input())):
-    alls.append(input())
-for elem in alls:
-    dict_n[elem] = ((set(elem) ^ sumbol) - sumbol)
-result = (list(dict_n.values())[0])
-stroka = str(result)
-if len(result) == 0:
-    print(-1)
+text = input()
+result = []
+result2 = []
+result_x = ''
+if len(text) % 2 == 0:
+    for i in range(len(text) // 2):
+        result += text[i]
+    for i in range(len(text) // 2, len(text), 1):
+        result2 += text[i]
 else:
-    for elem in result:
-        print(elem, end='')
+    for i in range((len(text) // 2) + 1):
+        result += text[i]
+    for i in range(len(text) // 2 + 1, len(text), 1):
+        result2 += text[i]
+if len(text) % 2 != 0:
+    for x in range(len(result) - 1):
+        result_x += result[x]
+        result_x += result2[x]
+    result_x += result[-1]
+    print(result_x)
+else:
+    for x in range(len(result)):
+        result_x += result[x]
+        result_x += result2[x]
+    print(result_x)
