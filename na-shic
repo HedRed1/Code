@@ -1,5 +1,14 @@
+sumbol = set(input())
 alls = []
+dict_n = {}
 for x in range(int(input())):
-    for j in range(int(input())):
-        alls.append(input())
-print(*[elem for elem in set(alls)], sep='\n')
+    alls.append(input())
+for elem in alls:
+    dict_n[elem] = ((set(elem) ^ sumbol) - sumbol)
+result = (list(dict_n.values())[0])
+stroka = str(result)
+if len(result) == 0:
+    print(-1)
+else:
+    for elem in result:
+        print(elem, end='')
