@@ -10,6 +10,8 @@ for sumbol in line:
     if line.count(' ') != 0:
         for x in range(line.count(' ')):
             line.remove(' ')
+    if line.count('.') != 0:
+        line.remove('.')
 for elem in set(line):
     if elem in alp_1:
         res = alp_1
