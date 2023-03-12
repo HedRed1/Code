@@ -5,13 +5,11 @@ for elem in line1:
 alp_1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 alp_2 = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 for sumbol in line:
-    if sumbol == '!' or sumbol == '?' or sumbol == ',' or sumbol == '.' or sumbol == ':' or sumbol == ';':
+    if sumbol == '!' or sumbol == '?' or sumbol == ',' or sumbol == '.' or sumbol == ':' or sumbol == ';'  or sumbol == '…':
         line.remove(sumbol)
     if line.count(' ') != 0:
         for x in range(line.count(' ')):
             line.remove(' ')
-    if line.count('.') != 0:
-        line.remove('.')
 for elem in set(line):
     if elem in alp_1 and elem not in '!"№;%:?.,':
         res = alp_1
